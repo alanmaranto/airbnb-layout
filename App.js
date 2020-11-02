@@ -1,7 +1,11 @@
 import React from 'react';
 
 import {View, Image, StyleSheet, Text, ScrollView} from 'react-native';
-import {activitiesImages, bestPlacesImages} from './imagesRoutes';
+import {
+  activitiesImages,
+  bestPlacesImages,
+  hostalsImages,
+} from './imagesRoutes';
 import JourneyCard from './JourneyCard';
 
 const App = () => {
@@ -22,6 +26,16 @@ const App = () => {
           <View>
             {bestPlacesImages.map((image) => (
               <JourneyCard src={image.source} best={styles.best} />
+            ))}
+          </View>
+          <Text style={styles.title}>Near By</Text>
+          <View style={styles.list}>
+            {hostalsImages.map((image) => (
+              <JourneyCard
+                src={image.source}
+                best={styles.best}
+                list={styles.listItem}
+              />
             ))}
           </View>
         </View>
@@ -50,11 +64,21 @@ const styles = StyleSheet.create({
     width: 250,
     height: 300,
     marginRight: 10,
+    borderRadius: 20,
   },
   best: {
     width: '100%',
     height: 200,
     marginVertical: 5,
+    borderRadius: 20,
+  },
+  list: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+  },
+  listItem: {
+    flexBasis: '49%',
   },
 });
 

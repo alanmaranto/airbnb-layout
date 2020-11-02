@@ -1,10 +1,10 @@
 import React from 'react';
 import {View, Image, StyleSheet} from 'react-native';
 
-const JourneyCard = ({src, activity, best}) => {
+const JourneyCard = ({src, activity, best, list}) => {
   return (
     <>
-      <View>
+      <View style={list ? list : null}>
         <Image style={activity ? activity : best} source={src} />
       </View>
     </>

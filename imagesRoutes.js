@@ -27,3 +27,18 @@ export const bestPlacesImages = [
     source: require('./assets/mejores3.jpg'),
   },
 ];
+
+export const hostalsImages = [
+  {
+    source: require('./assets/hospedaje1.jpg'),
+  },
+  {
+    source: require('./assets/hospedaje2.jpg'),
+  },
+  {
+    source: require('./assets/hospedaje3.jpg'),
+  },
+  {
+    source: require('./assets/hospedaje4.jpg'),
+  },
+]
