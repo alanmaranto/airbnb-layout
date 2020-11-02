@@ -1,22 +1,16 @@
 import React from 'react';
 import {View, Image, StyleSheet} from 'react-native';
 
-const JourneyCard = ({src}) => {
+const JourneyCard = ({src, activity, best}) => {
   return (
     <>
       <View>
-        <Image style={styles.city} source={src} />
+        <Image style={activity ? activity : best} source={src} />
       </View>
     </>
   );
 };
 
-const styles = StyleSheet.create({
-  city: {
-    width: 250,
-    height: 300,
-    marginRight: 10,
-  },
-});
+const styles = StyleSheet.create({});
 
 export default JourneyCard;

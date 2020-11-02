@@ -1,25 +1,31 @@
 import React from 'react';
 
 import {View, Image, StyleSheet, Text, ScrollView} from 'react-native';
-import {imagesSource} from './imagesRoutes';
+import {activitiesImages, bestPlacesImages} from './imagesRoutes';
 import JourneyCard from './JourneyCard';
 
 const App = () => {
   return (
     <>
-      <View>
+      <ScrollView>
         <View style={styles.bannerContainer}>
           <Image style={styles.banner} source={require('./assets/bg.jpg')} />
         </View>
         <View style={styles.titleContainer}>
           <Text style={styles.title}>What to do in Paris?</Text>
-          <ScrollView horizontal style={styles.a}>
-            {imagesSource.map((image) => (
-              <JourneyCard src={image.source} />
+          <ScrollView horizontal>
+            {activitiesImages.map((image) => (
+              <JourneyCard src={image.source} activity={styles.city} />
             ))}
           </ScrollView>
+          <Text style={styles.title}>Best Places</Text>
+          <View>
+            {bestPlacesImages.map((image) => (
+              <JourneyCard src={image.source} best={styles.best} />
+            ))}
+          </View>
         </View>
-      </View>
+      </ScrollView>
     </>
   );
 };
@@ -39,6 +45,16 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     marginVertical: 20,
+  },
+  city: {
+    width: 250,
+    height: 300,
+    marginRight: 10,
+  },
+  best: {
+    width: '100%',
+    height: 200,
+    marginVertical: 5,
   },
 });
 

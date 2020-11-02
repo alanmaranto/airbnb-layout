@@ -1,4 +1,4 @@
-export const imagesSource = [
+export const activitiesImages = [
   {
     source: require('./assets/actividad1.jpg'),
   },
@@ -13,5 +13,17 @@ export const imagesSource = [
   },
   {
     source: require('./assets/actividad5.jpg'),
+  },
+];
+
+export const bestPlacesImages = [
+  {
+    source: require('./assets/mejores1.jpg'),
+  },
+  {
+    source: require('./assets/mejores2.jpg'),
+  },
+  {
+    source: require('./assets/mejores3.jpg'),
   },
 ];
