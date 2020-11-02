@@ -5,6 +5,7 @@ import {
   activitiesImages,
   bestPlacesImages,
   hostalsImages,
+  experienceImages,
 } from './imagesRoutes';
 import JourneyCard from './JourneyCard';
 
@@ -19,7 +20,11 @@ const App = () => {
           <Text style={styles.title}>What to do in Paris?</Text>
           <ScrollView horizontal>
             {activitiesImages.map((image) => (
-              <JourneyCard src={image.source} activity={styles.city} />
+              <JourneyCard
+                description={image.description}
+                src={image.source}
+                activity={styles.city}
+              />
             ))}
           </ScrollView>
           <Text style={styles.title}>Best Places</Text>
@@ -27,6 +32,19 @@ const App = () => {
             {bestPlacesImages.map((image) => (
               <JourneyCard src={image.source} best={styles.best} />
             ))}
+          </View>
+          <View style={styles.experienceContainer}>
+            <Text style={styles.experienceTitle}>Experiences</Text>
+            <ScrollView horizontal>
+              {experienceImages.map((image) => (
+                <JourneyCard
+                  src={image.source}
+                  activity={styles.city}
+                  description={image.description}
+                  experience={true}
+                />
+              ))}
+            </ScrollView>
           </View>
           <Text style={styles.title}>Near By</Text>
           <View style={styles.list}>
@@ -55,16 +73,29 @@ const styles = StyleSheet.create({
   titleContainer: {
     marginHorizontal: 10,
   },
+  experienceTitle: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginVertical: 20,
+    color: '#FFF',
+  },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
     marginVertical: 20,
   },
+  experienceContainer: {
+    backgroundColor: '#07090A',
+    borderRadius: 20,
+    flex: 1,
+    height: 500,
+  },
   city: {
     width: 250,
     height: 300,
     marginRight: 10,
-    borderRadius: 20,
+    borderTopRightRadius: 20,
+    borderTopLeftRadius: 20,
   },
   best: {
     width: '100%',
